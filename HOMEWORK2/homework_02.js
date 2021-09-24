@@ -95,13 +95,10 @@ if (isAdult >= 18) {alert ("You have reached the age of majority")}
 Результат обчислення площі трикутника виводити в консоль з точністю 3 знаки після коми 
 (наприклад:  8.42355465 =>  8.424).  
 */
-let a = prompt ("Input the length of the first side of the triangle:",""); //Вводимо дані
-let b = prompt ("Input the length of the second side of the triangle:","");
-let c = prompt ("Input the length of the third side of the triangle:","");
+let a = + prompt ("Input the length of the first side of the triangle:",""); //Вводимо дані та приводимо їх до чисел
+let b = + prompt ("Input the length of the second side of the triangle:","");
+let c = + prompt ("Input the length of the third side of the triangle:","");
 
-a = Number(a); //Приводимо їх до чисел
-b = Number(b);
-c = Number(c);
 while (c >= (a + b)) 	//Перевіріяємо, чи довжина 3-ї сторони не більша за суму довжин двох перших сторін
 			{alert ("Incorrect data");
  			c = prompt ("Input RIGHT length of the third side of the triangle:","");
