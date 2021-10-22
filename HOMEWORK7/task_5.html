@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+<button id="btn">Live button!</button>    
+<script>
+    function clickBtn() {
+        let p1 = document.createElement("p")
+        p1.innerHTML = "I was presed!"
+        document.body.appendChild(p1)
+    }
+
+    function mouseOvr() {
+        let p1 = document.createElement("p")
+        p1.innerHTML = "Mouse on me!"
+        document.body.appendChild(p1)
+    }
+    
+    function mouseOut() {
+        let p1 = document.createElement("p")
+        p1.innerHTML = "Mouse isn't on me!"
+        document.body.appendChild(p1)
+    }
+    btn.addEventListener("click", clickBtn)
+    btn.addEventListener("mouseover", mouseOvr)
+    btn.addEventListener("mouseout", mouseOut)
+
+</script>
+</body>
+</html>

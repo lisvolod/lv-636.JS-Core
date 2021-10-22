@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Run script</button> 
+<script>
+ var myWin
+    function jumpingWindow(){
+        myWin = window.open("", "", "width=300,height=300,top=200,left=750");
+        
+        const p = new Promise ((res,rej) => {
+                setTimeout(() => {
+                    myWin.resizeTo(500,500)
+                    res(myWin)
+            }, 2000)
+        }).then (myWin => {
+            return new Promise ((res,rej) => {
+                setTimeout(() => {
+                    myWin.moveTo(200,200)
+                    res(myWin)
+            }, 2000)
+            })
+          }).then (myWin => {
+            return new Promise ((res,rej) => {
+                setTimeout(() => {
+                    myWin.close()
+                    res()
+            }, 2000)
+            })
+          })  
+    }
+
+    btn.addEventListener("click", jumpingWindow)
+</script>
+</body>
+</html>

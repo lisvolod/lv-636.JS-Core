@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <button id="btn1">Click to make the page blue</button>
+    <button id="btn2">Double click to make the page pink</button>
+    <button id="btn3">click and hold to make the page brown</button>
+    <a href="http://" id="href">Hover over to  make the page yellow</a>
+<script>
+    function blueBgCol(){document.body.style.background = "blue"}
+    function pinkBgCol(){document.body.style.background = "pink"}
+    function brownBgCol(){document.body.style.background = "brown"}
+    function yellowBgCol(){document.body.style.background = "yellow"}
+    btn1.addEventListener("click",blueBgCol)
+    btn2.addEventListener("dblclick",pinkBgCol)
+    btn3.addEventListener("mousedown",brownBgCol)
+    document.getElementById("href").addEventListener("mouseover",yellowBgCol)
+</script>
+</body>
+</html>
