@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="ger">Germany</option>
+        <option value="usa">USA</option>
+        <option value="ukr">Ukraine</option>
+    </select>
+                        
+    <select name="cities" id="cities"></select>
+    <p></p>
+
+<script>
+    // !!!Спробувати переписати за допомогою innerHTML
+    
+    function createCity(city){
+        let sel = document.getElementById("cities");
+        let opt = document.createElement("option");
+        opt.value = city;
+        opt.text = city;
+        sel.add(opt);
+    }
+    
+    function clearOldList (){
+        document.getElementById("cities").options.length = 0;
+    }
+    function createList () {
+        let arg = document.getElementById("country").value
+        switch (arg) {
+        case 'ger': clearOldList ()
+                    createCity("Berlin")
+                    createCity("Humburg")
+                    createCity("Frankfurt")
+                    createCity("Dresden")
+                    break;
+        case 'usa': clearOldList ()
+                    createCity("New York")
+                    createCity("Washington")
+                    createCity("Pitsburg")
+                    createCity("Los Angeles")
+                    break;
+           
+        case 'ukr': clearOldList ()
+                    createCity("Kyiv")
+                    createCity("Kharkiv")
+                    createCity("Odesa")
+                    createCity("Lviv")
+                    break;
+        }
+    }
+    function showCountry(){
+      let c = document.getElementById("country");
+      return c.options[c.selectedIndex].text  
+    }
+    
+    function showSity(){
+      let s = document.getElementById("cities");
+      return s.options[s.selectedIndex].text  
+    }
+
+    function postP(){
+        document.querySelector("p").innerHTML = showCountry()+", "+showSity()
+    }
+    
+    createList();
+    postP();
+    country.addEventListener("change", createList) 
+    country.addEventListener("change", postP) 
+    cities.addEventListener("change", postP) 
+
+</script>    
+</body>
+</html>
